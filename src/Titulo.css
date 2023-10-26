@@ -1,0 +1,30 @@
+.TituloInicial {
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+    font-weight: bold;
+    
+  }
+  
+  .TituloInicial span {
+    font-weight: bold;
+  }
+
+  .TituloSecundario {
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 4px;
+    font-weight: normal;
+   }
+   .Texto {
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 4px;
+    font-weight: normal;
+    
+  }
+  
+  

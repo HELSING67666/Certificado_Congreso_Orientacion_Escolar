@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+// import Swal from 'sweetalert2'
 
-function App() {
+import { Titulo } from './Titulo'
+import { FormularioConsulta } from './FormularioConsulta'
+import { FormularioDescargar } from './FormularioDescargar'
+import { Modal } from './Modal'
+// import { ModalNoEncontrado } from './ModalNoEncontrado'
+// import { MensajeError } from './MensajeError'
+// import { ValidacionComponente } from './ValidacionComponente'
+
+function App () {
+  const [consultaDocumento, setConsultaDocumento] = React.useState()
+  const [nombreDocente, setNombreDocente] = React.useState('')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+<>
+<Titulo/>
+<FormularioConsulta
+  setConsultaDocumento={setConsultaDocumento}
+  setNombreDocente = {setNombreDocente}
+/>
+
+{ consultaDocumento && (<Modal> <FormularioDescargar
+        setConsultaDocumento={setConsultaDocumento}
+        consultaDocumento={consultaDocumento}
+        nombreDocente={nombreDocente}
+      /> </Modal>)}
+
+</>
+  )
 }
 
-export default App;
+export default App
