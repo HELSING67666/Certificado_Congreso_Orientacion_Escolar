@@ -34,7 +34,7 @@ function FormularioConsulta ({
 
         <form onSubmit={onSubmit}>
             <label>Digite su número de documento</label>
-            <input className="inputFormulario" onChange={onChange}></input>
+            <input className="inputFormulario" type='number' maxLength={20} onChange={onChange}></input>
 
             <div className="FormularioConsulta-ContenedorBotones">
                 <button className="FormularioConsulta-BotonBusqueda FormularioConsulta-BotonBusqueda-search" type="submit" >Buscar</button>
