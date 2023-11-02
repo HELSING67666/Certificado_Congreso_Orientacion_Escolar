@@ -12,9 +12,9 @@ function FormularioConsulta ({
     event.preventDefault()
     const existe = consultaExistente(resultadoConsulta)
 
-    if (existe.length > 0) {
+    if (existe !== undefined) {
       setConsultaDocumento('A')
-      const filteredNames = existe.map(item => item.Nombre)
+      const filteredNames = existe.Nombre
       setNombreDocente(filteredNames)
     } else setConsultaDocumento('B')
   }
@@ -22,7 +22,7 @@ function FormularioConsulta ({
   const consultaExistente = (numeroDocumento) => {
     return informacionColegios.filter(
       datos => datos.Documento === (numeroDocumento)
-    )
+    )[0]
   }
 
   const onChange = (event) => {
